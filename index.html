@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bestiaire</title>
+    <style>
+        /* Style de base */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0e8d0;
+        }
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
+        }
+        .left-column, .right-column {
+            width: 150px;
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+        }
+        .content {
+            flex-grow: 1;
+            margin-left: 20px;
+            max-width: 500px;
+        }
+        .title {
+            font-size: 2rem;
+            text-align: center;
+            background-color: #f5e1c2;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .letter-button {
+            padding: 10px;
+            margin: 5px 0;
+            text-align: center;
+            background-color: #f0e8d0;
+            border: 2px solid #8b5a2b;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .letter-button:hover {
+            background-color: #f5e1c2;
+        }
+        .monster-list {
+            list-style-type: none;
+            padding: 0;
+            background-color: #fffbe0;
+            border-radius: 10px;
+            overflow-y: scroll;
+            height: 300px;
+        }
+        .monster-list li {
+            padding: 8px;
+            font-size: 1.2rem;
+        }
+        .monster-list li:hover {
+            background-color: #f5e1c2;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Colonnes de lettres -->
+        <div class="left-column">
+            <button class="letter-button" onclick="changePage('A')">A</button>
+            <button class="letter-button" onclick="changePage('B')">B</button>
+            <button class="letter-button" onclick="changePage('C')">C</button>
+            <button class="letter-button" onclick="changePage('D')">D</button>
+            <button class="letter-button" onclick="changePage('E')">E</button>
+            <button class="letter-button" onclick="changePage('F')">F</button>
+            <button class="letter-button" onclick="changePage('G')">G</button>
+            <button class="letter-button" onclick="changePage('H')">H</button>
+            <button class="letter-button" onclick="changePage('I')">I</button>
+            <button class="letter-button" onclick="changePage('K')">K</button>
+        </div>
+
+        <!-- Contenu central -->
+        <div class="content">
+            <div class="title">Bestiaire</div>
+            <ul id="monsterList" class="monster-list"></ul>
+        </div>
+
+        <!-- Colonnes de lettres (deuxième colonne) -->
+        <div class="right-column">
+            <button class="letter-button" onclick="changePage('L')">L</button>
+            <button class="letter-button" onclick="changePage('M')">M</button>
+            <button class="letter-button" onclick="changePage('N')">N</button>
+            <button class="letter-button" onclick="changePage('O')">O</button>
+            <button class="letter-button" onclick="changePage('P')">P</button>
+            <button class="letter-button" onclick="changePage('R')">R</button>
+            <button class="letter-button" onclick="changePage('S')">S</button>
+            <button class="letter-button" onclick="changePage('T')">T</button>
+            <button class="letter-button" onclick="changePage('V')">V</button>
+            <button class="letter-button" onclick="changePage('Z')">Z</button>
+        </div>
+    </div>
+
+    <script>
+        // Données du bestiaire
+        const bestiary = {
+            "A": ["Les abobinables hommes des neiges", "Les araignées géantes", "Les automates"],
+            "B": ["Les banshees", "les balrogs", "les barghests", "Les basilics", "le béhémoth", "les boggarts", "les bondins"],
+            "C": ["Les cadavres", "Les capitans", "les cattis", "Les cauchemars", "Les centaures", "Les chauve souris", "Les chimères", "Les chonchons", "Les crascs", "Les cyclopes"],
+            "D": ["Les démons", "les Djinn", "Les Dullahan", "les duplicants", "Les dragons", "les dryades"],
+            "E": ["Les ectoplasmes", "Les élémentaux", "Les elfes", "les ents"],
+            "F": ["Les fantômes", "les farfadets", "les faunes", "les fongoïdes", "les fossoyeurs", "les furgolins"],
+            "G": ["Les gargouilles", "Les géants des glace", "les génies des arbres", "Les gnomes", "Les gobelins", "les golems", "les goules", "les gorgones", "les gremlins", "les griffons"],
+            "H": ["les harpies", "les hellions", "les hellrots", "les hippogriffes", "Les hobbits", "les Hobgobelins", "les hydres"],
+            "I": ["itikar"],
+            "K": ["les kappas", "le kraken"],
+            "L": ["les lacodons", "les licornes", "Les loups", "les loup-garous", "les lutins"],
+            "M": ["les manticores", "les minotaures", "Les momies", "les morts vivants"],
+            "N": ["Les nains", "les nécrochores", "le Nuckelavee", "les nymphes"],
+            "O": ["Les obsidiaques", "les ondines", "Les orcs", "Les ogres", "les onis"],
+            "P": ["Les pazuzus", "le phénix"],
+            "R": ["les rakshahs", "Les revenants"],
+            "S": ["Les scorpions géants", "les selkies", "les sirènes", "les sorcières", "les spectres", "les sphinx", "les spriggans", "Les squelettes", "les stryges", "Les sufiriades"],
+            "T": ["les tarasques", "Les têtes de mort", "les titans", "les tourmenteurs", "les triades", "les trolls"],
+            "V": ["les vampires", "les vivernes", "les volcrates"],
+            "Z": ["les zombies"]
+        };
+
+        // Fonction pour changer de page et rediriger vers la page du monstre
+        function changePage(letter) {
+            const monsterList = document.getElementById("monsterList");
+            monsterList.innerHTML = '';  // Effacer la liste existante
+            if (bestiary[letter]) {
+                bestiary[letter].forEach(monster => {
+                    const li = document.createElement("li");
+                    const a = document.createElement("a");
+                    a.textContent = monster;
+                    // Remplacer les espaces par des underscores dans l'URL
+                    a.href = `monsters_html/${monster.replace(/\s+/g, ' ').toLowerCase()}.html`;
+                    li.appendChild(a);
+                    monsterList.appendChild(li);
+                });
+            }
+        }
+
+        // Affichage initial (lettre A)
+        changePage("A");
+    </script>
+
+</body>
+</html>
