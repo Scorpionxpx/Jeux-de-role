@@ -141,7 +141,7 @@
                     const a = document.createElement("a");
                     a.textContent = monster;
                     // Remplacer les espaces par des underscores dans l'URL
-                    a.href = `monsters_html/${monster.replace(/\s+/g, ' ').toLowerCase()}.html`;
+                    a.href = `monsters_html/${monster.replace(/\s+/g, ' ')}.html`;
                     li.appendChild(a);
                     monsterList.appendChild(li);
                 });
