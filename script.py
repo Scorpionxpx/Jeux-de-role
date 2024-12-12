@@ -16,7 +16,7 @@ bestiary = {
     "M": ["les manticores", "les minotaures", "Les momies", "les morts vivants"],
     "N": ["Les nains", "les nécrochores", "le Nuckelavee", "les nymphes"],
     "O": ["Les obsidiaques", "les ondines", "les orcs", "les ogres", "les onis"],
-    "P": ["Les pazuzus", "le phénix"],
+    "P": ["Les pazuzus", "le phénix", "Pierre le pokemon"],
     "R": ["les rakshahs", "Les revenants"],
     "S": ["Les scorpions géants", "les selkies", "les sirènes", "les sorcières", "les spectres", "les sphinx", "les spriggans", "Les squelettes", "les stryges", "Les sufiriades"],
     "T": ["les tarasques", "Les têtes de mort", "les titans", "les tourmenteurs", "les triades", "les trolls"],
