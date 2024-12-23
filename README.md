@@ -5,7 +5,6 @@ Bienvenue dans le dépôt **Jeux de Rôle**. Ce projet contient des ressources e
 ## Table des matières
 
 - [Installation](#installation)
-- [Utilisation](#utilisation)
 - [Contribuer](#contribuer)
 - [Licence](#licence)
 
@@ -17,15 +16,6 @@ Pour installer ce projet, clonez le dépôt et installez les dépendances néces
 git clone https://github.com/Scorpionxpx/Jeux-de-role.git
 cd Jeux-de-role
 # Installez les dépendances si nécessaire
-```
-
-## Utilisation
-
-Décrivez ici comment utiliser votre projet. Par exemple :
-
-```bash
-# Commande pour lancer le jeu
-./start-game.sh
 ```
 
 ## Contribuer
