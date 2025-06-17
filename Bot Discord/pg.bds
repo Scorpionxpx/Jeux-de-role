@@ -1,62 +1,45 @@
 ---
-$title[Lancer de dé 🎲 : d100]
-$description[Tu as obtenu $randomText[1;2;3;4;5;6;7;8;9;10;11;12;13;14;15;16;17;18;19;20;21;22;23;24;25;26;27;28;29;30;31;32;33;34;35;36;37;38;39;40;41;42;43;44;45;46;47;48;49;50;51;52;53;54;55;56;57;58;59;60;61;62;63;64;65;66;67;68;69;70;71;72;73;74;75;76;77;78;79;80;81;82;83;84;85;86;87;88;89;90;91;92;93;94;95;96;97;98;99;100] !]
+$title[Lancer de dé 🎲]
+$description[Tu as obtenu $randomText[1;2;3;4;5;6;7;8;9;10;11;12] !]
 $color[FFCC00]
-$footer[Bonne chance ! Tape !d100 pour relancer.]
-$onlyIf[$message==d100;]
+$footer[Bonne chance ! Tape !d12 pour relancer.]
 ---
-$title[Lancer de dé 🎲 : d20]
-$description[Tu as obtenu $randomText[1;2;3;4;5;6;7;8;9;10;11;12;13;14;15;16;17;18;19;20] !]
-$color[FFCC00]
-$footer[Bonne chance ! Tape !d20 pour relancer.]
-$onlyIf[$message==d20;]
----
-$title[Lancer de dé 🎲 : d10]
+$title[Lancer de dé 🎲]
 $description[Tu as obtenu $randomText[1;2;3;4;5;6;7;8;9;10] !]
 $color[FFCC00]
 $footer[Bonne chance ! Tape !d10 pour relancer.]
-$onlyIf[$message==d10;]
 ---
-$title[Lancer de dé 🎲 : d8]
+$title[Lancer de dé 🎲]
 $description[Tu as obtenu $randomText[1;2;3;4;5;6;7;8] !]
 $color[FFCC00]
 $footer[Bonne chance ! Tape !d8 pour relancer.]
-$onlyIf[$message==d8;]
 ---
-$title[Lancer de dé 🎲 : d6]
+$title[Lancer de dé 🎲]
 $description[Tu as obtenu $randomText[1;2;3;4;5;6] !]
 $color[FFCC00]
 $footer[Bonne chance ! Tape !d6 pour relancer.]
-$onlyIf[$message==d6;]
 ---
-$title[Lancer de dé 🎲 : d4]
+$title[Lancer de dé 🎲]
 $description[Tu as obtenu $randomText[1;2;3;4] !]
 $color[FFCC00]
 $footer[Bonne chance ! Tape !d4 pour relancer.]
-$onlyIf[$message==d4;]
+
+
 ---
-$title[📜 Plus d'informations sur le JDR]
-$description[Découvrez tous les détails en cliquant sur ce lien : https://scorpionxpx.github.io/Jeux-de-role/]
-$color[3498DB]
-$footer[Bonne aventure, héros !]
-$onlyIf[$message==info-jdr;]
 ---
-$deletecommand
-$nomention
-$clear[$message]
-$title[Messages Supprimés]
-$color[005cff]
-$description[$username, Viens de clear le tchat !]
-$footer[CheckWarns • Aujourd'hui - $hour:$minute]
-$argsCheck[1;Erreur ! | ?clear {nombre}]
-$onlyPerms[manageroles;❌ Tu n'as pas la permission d'exécuter cette commande !]
-$onlyIf[$message==clear;]
----
-$title[🛠️ Commandes disponibles]
-$description[Voici la liste des commandes disponibles pour votre JDR :\n
-🎲 !d100, !d20, !d10, !d8, !d6, !d4 : Effectue un lancer de dé du type choisi.\n
-📜 !info-jdr : Affiche un lien vers les règles ou informations sur le JDR.\n
-🧹 !clear [nombre] : Supprime les derniers messages du chat (par exemple !clear 10).]
+$title[Aide des commandes 🎲]
+$description[
+Voici la liste des commandes disponibles pour lancer des dés :
+
+• **!d100** : Lance un dé à 100 faces (résultat entre 1 et 100)
+• **!d20** : Lance un dé à 20 faces (résultat entre 1 et 20)
+• **!d12** : Lance un dé à 12 faces (résultat entre 1 et 12)
+• **!d10** : Lance un dé à 10 faces (résultat entre 1 et 10)
+• **!d8** : Lance un dé à 8 faces (résultat entre 1 et 8)
+• **!d6** : Lance un dé à 6 faces (résultat entre 1 et 6)
+• **!d4** : Lance un dé à 4 faces (résultat entre 1 et 4)
+
+Tape la commande de ton choix pour effectuer un lancer de dé !
+]
 $color[00AAFF]
-$footer[Tapez une commande pour l'utiliser. Bon jeu !]
-$onlyIf[$message==commandes;]
+$footer[Bon jeu et bonne chance !]
